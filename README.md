@@ -27,7 +27,7 @@
 * Using the Extensis Portfolio Flow app ( [Android](http://play.google.com/store/apps/details?id=com.extensis.portfolio.uploader) / [iOS](https://itunes.apple.com/us/app/portfolio-flow/id731629362?mt=8) ) , verify that files are uploading properly to the target Portfolio instance's "Mobile Uploads" Catalog.
 
 #### 5. MOBILE UPLOADS NETPUBLISH WEBSITE
-* Using the Portfolio Web Client select the "Mobile Uploads" Catalog > "All Assets" Gallery and then Publish a NetPublish Website.
+* Using the Portfolio Web Client , select the "Mobile Uploads" Catalog > "All Assets" Gallery and then Publish a NetPublish Website.
   * Recommended NetPublish Site Builder choices :
     * Security > "No Login Required" selected.
     * Details > Set Metadata Fields > "Filename" , "IPTC - Title" , "IPTC - Instructions" , "IPTC - Event" , "Keywords" , and "Description" selected.

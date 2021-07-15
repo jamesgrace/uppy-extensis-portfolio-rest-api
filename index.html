@@ -1,0 +1,130 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Extensis Portfolio 4 + Uppy</title>
+		<link href="https://releases.transloadit.com/uppy/v1.30.0/uppy.min.css" rel="stylesheet">
+		<link href="portfolio4.css" rel="stylesheet">
+		<link rel="icon" type="image/x-icon" href="favicon.ico">
+	</head>
+
+	<body>
+
+	<div id="dashboardWrapper" style="max-width: 700px; margin: 0 auto;">
+
+		<div id="drag-drop-area"></div>
+
+	</div>
+
+		<script src="https://releases.transloadit.com/uppy/v1.30.0/uppy.min.js"></script>
+
+		<script>
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+		PORTFOLIO_SERVER = 'https://portfolio.example.com:9443';
+
+		API_TOKEN = 'TOKEN-1abc2def-...';
+
+		RESULTS_NETPUBLISH = 'https://portfolio.example.com:8095/mobile_uploads/';
+
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+
+		var todaysDate = new Date();
+		var currentLocalTime = todaysDate.toLocaleTimeString('en-US', { hour12: false }).replace(/:/g,'_');
+
+
+
+			var uppy = Uppy.Core({
+				debug: true,
+				autoProceed: false,
+				restrictions: {
+					minFileSize: 100000,
+					maxFileSize: 50000000,
+					maxNumberOfFiles: 10,
+					minNumberOfFiles: 1,
+					allowedFileTypes: ['*/*'],
+				}, // restrictions
+				meta: { title: '', instructions: '', event: '', keywords: '', description: ''},
+				onBeforeUpload: (files) => {
+					const updatedFiles = Object.assign({}, files)
+					Object.keys(updatedFiles).forEach(fileId => {
+						if (typeof updatedFiles[fileId].meta.keywords !== 'undefined') {
+							splitKeywords = JSON.stringify(updatedFiles[fileId].meta.keywords.split(','))
+								} else {
+							splitKeywords = updatedFiles[fileId].meta.keywords
+						} // if
+						this.uppy.setFileMeta(fileId, {
+							properties: '{"batchId":"'+currentLocalTime+'","metadata":{"dc:title":"'+updatedFiles[fileId].meta.title+'","photoshop:Instructions":"'+updatedFiles[fileId].meta.instructions+'","Iptc4xmpExt:Event":"'+updatedFiles[fileId].meta.event+'","dc:subject":'+splitKeywords+',"dc:description":"'+updatedFiles[fileId].meta.description+'"}}',
+						})
+					}) //forEach
+				} // onBeforeUpload
+			}) // Uppy.core
+
+
+
+			.use(Uppy.Dashboard, {
+				inline: true,
+				target: '#drag-drop-area',
+				trigger: '#pick-files',
+				showLinkToFileUploadResult: true,
+				showProgressDetails: true,
+				theme: 'light',
+//				height: 600,
+				metaFields: [
+					{ id: 'name', name: 'Name', placeholder: 'file name' },
+					{ id: 'title', name: 'Title', placeholder: '' },
+					{ id: 'instructions', name: 'Instructions', placeholder: '' },
+					{ id: 'event', name: 'Event', placeholder: '' },
+					{ id: 'keywords', name: 'Keywords', placeholder: 'Keywords are comma separated' },
+					{ id: 'description', name: 'Description', placeholder: '' },
+						]
+			}) // Uppy.Dashboard
+
+
+
+			.use(Uppy.XHRUpload, {
+				endpoint: PORTFOLIO_SERVER + '/FileTransfer/upload',
+				method: 'post',
+				limit: 10,
+				formData: true,
+				metaFields: null,
+				fieldName: 'files[]',
+			}) // Uppy.XHRUpload
+
+
+
+			uppy.on('file-added', (file) => {
+				uppy.setFileMeta(file.id, {
+				sessionId: API_TOKEN,
+				action: 'defaultUpload',
+				Filedata: file.name
+					}) // setFileMeta
+			}) // file-added
+
+
+
+			uppy.on('complete', (result) => {
+				console.log('[ Success Log ] :', result.successful)
+				console.log('[ Failure Log ] :', result.failed)
+			}) // complete
+
+
+
+			uppy.on('upload-success', (file, response) => {
+				response.status
+				console.log('[ response.status ] = [ ' + response.status + ' ]')
+			uppy.setFileState(file.id, { uploadURL: RESULTS_NETPUBLISH })
+			}) // upload-success
+
+
+
+		</script>
+
+	</body>
+
+</html>

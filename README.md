@@ -13,12 +13,12 @@
 
 #### 1. PORTFOLIO SERVER VERSION
 * Via the Portfolio Administration ( _:8091_ ) Web interface , verify the current version of your Portfolio instance and that the Portfolio API module has been activated.
-  * Although the provided example may work on earlier Portfolio versions , Portfolio version 3.6.3 ( _or greater_ ) is recommended.
+  * Although the provided example may work with earlier Portfolio versions , Portfolio version 3.6.3 ( _or greater_ ) is recommended.
 
 #### 2. MOBILE UPLOADING
 * Via the Portfolio Administration ( _:8091_ ) Web interface , select "Global Settings" > "Mobile" and verify that "Enable Mobile Uploading" has been selected and that "Save mobile uploads to this folder" has been configured for a location with ample drive space.
 * Via the Portfolio Administration ( _:8091_ ) Web interface , select "Catalogs" and verify that the "Mobile Uploads" Catalog is listed.
-  * Note that it is not necessary for indivudal Users to speifically be granted membership to the "Mobile Uploads" Catalog as Uploading via defaultUpload is permitted to all existing Users regardless of Catalog membership.
+  * Note that it is not necessary for indivudal Users to specifically be granted membership to the "Mobile Uploads" Catalog as Uploading via defaultUpload is permitted to all existing Users regardless of Catalog membership.
 
 #### 3. API TOKEN
 * Via the Portfolio Administration ( _:8091_ ) Web interface , select Users and either take note of an existing API Token or create a new API Token.

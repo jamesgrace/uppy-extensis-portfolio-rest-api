@@ -24,7 +24,7 @@
 * Via the Portfolio Administration ( _:8091_ ) Web interface , select "Users" and either take note of an existing API Token or create a new API Token.
 
 #### 4. MOBILE UPLOAD TESTING
-* Using the Extensis Portfolio Flow app ( [Android](http://play.google.com/store/apps/details?id=com.extensis.portfolio.uploader) / [iOS](https://itunes.apple.com/us/app/portfolio-flow/id731629362?mt=8) ) , verify that files are uploading properly to the target Portfolio instance's Mobile Uploads Catalog.
+* Using the Extensis Portfolio Flow app ( [Android](http://play.google.com/store/apps/details?id=com.extensis.portfolio.uploader) / [iOS](https://itunes.apple.com/us/app/portfolio-flow/id731629362?mt=8) ) , verify that files are uploading properly to the target Portfolio instance's "Mobile Uploads" Catalog.
 
 #### 5. MOBILE UPLOADS NETPUBLISH WEBSITE
 * Using the Portfolio Web Client select the "Mobile Uploads" Catalog > "All Assets" Gallery and then Publish a NetPublish Website.

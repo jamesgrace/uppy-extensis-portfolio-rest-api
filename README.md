@@ -21,7 +21,7 @@
   * Note that it is not necessary for indivudal Users to specifically be granted membership to the "Mobile Uploads" Catalog as Uploading via defaultUpload is permitted to all existing Users regardless of Catalog membership.
 
 #### 3. API TOKEN
-* Via the Portfolio Administration ( _:8091_ ) Web interface , select Users and either take note of an existing API Token or create a new API Token.
+* Via the Portfolio Administration ( _:8091_ ) Web interface , select "Users" and either take note of an existing API Token or create a new API Token.
 
 #### 4. MOBILE UPLOAD TESTING
 * Using the Extensis Portfolio Flow app ( [Android](http://play.google.com/store/apps/details?id=com.extensis.portfolio.uploader) / [iOS](https://itunes.apple.com/us/app/portfolio-flow/id731629362?mt=8) ) , verify that files are uploading properly to the target Portfolio instance's Mobile Uploads Catalog.

@@ -46,7 +46,7 @@
 * **`index.html`** : verify that the `PORTFOLIO_SERVER` ( _e.g. `https://portfolio.example.com:9443`_ ) and `API_TOKEN` ( _e.g. `TOKEN-1abc2def-...`_ ) global variables are properly defined.
 
 #### 4. OPTIONAL WEBSITE FILE CONFIGURATION
-* **`index.html`** : verify that the `RESULTS_NETPUBLISH` global variable value matches the Mobile Uploads NetPublish Website URL ( _e.g. `https://netpublish.example.com/mobile_uploads`_ ).
+* **`index.html`** : verify that the `RESULTS_NETPUBLISH` global variable value matches the Mobile Uploads NetPublish Website URL ( _e.g. `https://portfolio.example.com:8095/mobile_uploads`_ ).
   * Note that this will allows uploaders to view transfers ( _post-upload_ ).
 * **`portfolio4.css`** : verify that the various CSS color value selections align with approved corporate branding standards and modify if necessary.
 * **`favicon.ico`** : verify that the included favicon aligns with approved corporate branding standards and replace if necessary.

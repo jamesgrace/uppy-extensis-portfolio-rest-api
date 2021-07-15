@@ -1,0 +1,35 @@
+body {
+	background-color: #101d2f;
+}
+.uppy-Dashboard-browse {
+	color: #ce714b;
+}
+.uppy-Dashboard-browse:hover {
+	color: #b55731;
+	border-bottom: 1px solid #b55731;
+}
+.uppy-Dashboard-browse:focus {
+	color: #b55731;
+	border-bottom: 1px solid #b55731;
+}
+.uppy-StatusBar.is-waiting .uppy-StatusBar-actionBtn--upload {
+	background-color: #ce714b;
+}
+.uppy-StatusBar.is-waiting .uppy-StatusBar-actionBtn--upload:hover {
+	background-color: #b55731;
+}
+.uppy-StatusBar.is-waiting .uppy-StatusBar-actionBtn--upload:focus {
+	background-color: #b55731;
+}
+.uppy-Dashboard-FileCard-preview {
+	background-color: #853c14 !important;
+}
+.uppy-c-btn-primary {
+	background-color: #ce714b;
+}
+.uppy-c-btn-primary:hover {
+	background-color: #b55731;
+}
+.uppy-c-btn-primary:focus {
+	background-color: #b55731;
+}

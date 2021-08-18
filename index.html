@@ -47,7 +47,8 @@
 					maxFileSize: 50000000,
 					maxNumberOfFiles: 10,
 					minNumberOfFiles: 1,
-					allowedFileTypes: ['*/*'],
+					//allowedFileTypes: ['*/*'],
+					allowedFileTypes: ['image/*', 'video/*'], // iOS compatibility
 				}, // restrictions
 				meta: { title: '', instructions: '', event: '', keywords: '', description: ''},
 				onBeforeUpload: (files) => {
